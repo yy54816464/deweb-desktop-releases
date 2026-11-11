@@ -6,9 +6,14 @@ https://github.com/yy54816464/deweb-desktop-releases/releases/latest
 
 ## Latest
 
-- Version: `0.1.0`
-- File: `DeWEB-Desktop-0.1.0-win-x64.zip`
-- SHA-256: `E0C44AEE3A4762ED6140AFBEBE6E9545C2B596D40586EED5DCE686558EEF3426`
+- Version: `0.1.1`
+- File: `DeWEB-Desktop-0.1.1-win-x64.zip`
+- SHA-256: `558BDC78FE85AB265179EEBBF2BBF99735CFFEEFCB880CC07BD918767F945CD9`
+
+## Changes in 0.1.1
+
+- Added GitHub release update check in **My**. The app checks at most once per 24 hours and links to the release page; it does not silently replace files.
+- Version label now reports application build `0.1.1`.
 
 ## Install
 
