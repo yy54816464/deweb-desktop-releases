@@ -1,28 +1,34 @@
-# 0.1.1
+# DeWEB Desktop V0.1.2 上线
 
-Windows x64 portable build.
+· 修复连接钱包时显示域名不一致问题
+· 应用智能多窗排列
+· 修复 X Layer 应用与 BSC 链应用无法同时使用
 
-## Download
+## 下载
 
-`DeWEB-Desktop-0.1.1-win-x64.zip`
+安装程序：
 
-SHA-256:
+`DeWEB-Desktop-Setup-0.1.2.exe`
 
-`FAC03FEC0A5BF1928BEB7D1094A7CA2DB6C2FF9CF3B416D8CB0C0A2D5DE4F00B`
+SHA-256：
 
-## Changes
+`8C9136C7585A3C4275754715DFE9CF159235F98F080E59A95B8B12045159E969`
 
-- Added GitHub release update check under **My**.
-- Checks at most once every 24 hours; cached for 24 hours.
-- Shows a red dot on My when a newer release exists.
-- Opens the GitHub release page; does not auto-download or auto-replace.
-- Version/build display updated to 0.1.1.
+便携版：
 
-## Notes
+`DeWEB-Desktop-0.1.2-win-x64.zip`
 
-- Portable Electron app; no installer.
-- Built-in six DeWEB sites.
-- App Center, native windows, desktop taskbar, folders and local-first profiles.
-- Optional Supabase email login / wallpaper sync.
-- Wallet signing still requires the wallet app; no private keys in DeWEB.
-- Existing 0.1.0 users do not have the updater yet; users on 0.1.1 will receive future update notices.
+SHA-256：
+
+`7040C0B79A78AFCD38C30AD41691B95DF3C640F399D7A0BA3305CB2BCF866100`
+
+## 说明
+
+- 钱包页面改为公共 HTTPS 地址：`https://deweb-wallet-ui.pages.dev/wallet`
+- 更新清单使用 ECDSA P-256 签名，客户端验签后才接受版本
+- 每个站点窗口保留完整原生外框
+- Windows SmartScreen 可能提示未知发布者，因为安装包尚未代码签名
+
+The complete desktop source is not published. The wallet connector source is available at:
+
+https://github.com/yy54816464/deweb-wallet-connector
