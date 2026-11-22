@@ -1,0 +1,8 @@
+{
+  "versionCode": 406,
+  "versionName": "0.1.0-beta",
+  "apk": "https://download.dewebdesk.link/downloads/DeWEB-Beta-0.1.0.apk",
+  "sha256": "2f11b404a188bd862785fcc4f18d8db37d2a246ae1eb354058b2f399e1a8504f",
+  "signature": "MEQCICz6kXZi+AszdEtmkgdyKxrldqErPx6sOw5JQXLZ0Y6EAiA98peqZjQhEIkXKYRpKIg2o+apzHQ972AwFN2jTbzLyw==",
+  "notes": "DeWEB Beta 0.1.0：仅弹窗打开下载页，不在 App 内下载或安装。"
+}
