@@ -1,8 +1,0 @@
-{
-  "versionCode": 407,
-  "versionName": "0.1.0-beta",
-  "apk": "https://download.dewebdesk.link/downloads/DeWEB-Beta-0.1.0.apk",
-  "sha256": "780afb5cf04533e0d883c113805fbdf6fe263ca11fb877f767339f52d74a47b6",
-  "signature": "MEYCIQCoOMToufloUOUIAbTk6oYEijLUw9Ke+scWM+1cq+vJ1wIhAKWfNGCHA5DF3Oo8eM/Lb34ccviwhTHRlla+TE4NGSUc",
-  "notes": "DeWEB Beta 0.1.0：修复 RPC 超时时电路会员不生效（允许 Worker API 兜底）。"
-}
