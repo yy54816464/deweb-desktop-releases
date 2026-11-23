@@ -1,8 +1,8 @@
 {
-  "versionCode": 406,
-  "versionName": "0.1.0-beta",
+  "versionCode": 407,
+  "versionName": "0.1.1-test",
   "apk": "https://download.dewebdesk.link/downloads/DeWEB-Beta-0.1.0.apk",
   "sha256": "b22007720e33a264d223e231991ae8455e64c2bd0c8f0780e5404ba951d4f612",
-  "signature": "MEQCIDLgCp9oPP+Mp+AheNEsfE5N52xuWMLYPsJSAcCQfShDAiBSD3D94M6P7MON2bYPDM2Umnkx5t8mCsZUPtCF6c49TQ==",
-  "notes": "DeWEB Beta 0.1.0：v1+v2+v3 签名；仅弹窗打开下载页，不在 App 内下载或安装。"
+  "signature": "MEQCICySrApXBS9qAGwh5H7Vb8N3iBSTkg8BxEBXJYLg1mgcAiBI2Ss6U49LVpIZ5Fh3GY2EJmi4KywlnuyHi/hFso0+VQ==",
+  "notes": "仅用于验证更新弹窗；APK 仍是 0.1.0 Beta，App 不下载、不安装。验证后恢复 406。"
 }
