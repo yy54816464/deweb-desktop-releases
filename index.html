@@ -2,34 +2,302 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DeWEB Desktop 下载</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DeWEB-Desktop · 下载</title>
+<meta name="description" content="DeWEB-Desktop 0.1.0 官方下载页：APK 校验、证书指纹、多窗口桌面、开源地址。">
+<meta name="theme-color" content="#07110c">
+<link rel="icon" type="image/png" href="./docs/logo-64.png">
 <style>
-:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#07100b;color:#dfeae2;font:14px/1.7 ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{width:min(680px,100%);border:1px solid #2f5542;background:#0d1711;border-radius:18px;padding:32px;box-shadow:0 20px 80px #0008}
-h1{font-size:26px;margin:0 0 8px;color:#2fd39a}p{color:#8ba596}.meta{background:#101d16;border:1px solid #22382c;border-radius:12px;padding:14px;margin:20px 0;word-break:break-all;font-size:12px}
-a.big{display:block;text-align:center;background:#2fd39a;color:#07100b;text-decoration:none;font-weight:700;padding:14px 18px;border-radius:12px;margin:20px 0}a.big:hover{background:#5be5b6}
-a{color:#2fd39a}.small{font-size:12px;color:#5c7567}.hash{font-size:11px;color:#8ba596}
+:root{
+  --bg:#06100a;
+  --bg2:#0b1b12;
+  --ink:#e8f5ec;
+  --muted:#91aa9a;
+  --dim:#607a69;
+  --mint:#5be5b6;
+  --mint2:#2fd39a;
+  --line:rgba(177,255,218,.14);
+  --line2:rgba(255,255,255,.08);
+  --glass:rgba(13,30,21,.58);
+  --glass2:rgba(20,43,31,.46);
+  --warm:#ffb088;
+  --mono:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace;
+  --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;color:var(--ink);font:15px/1.65 var(--sans);
+  background:
+    radial-gradient(900px 650px at 8% 0%,rgba(58,160,113,.22),transparent 64%),
+    radial-gradient(760px 620px at 92% 12%,rgba(255,150,110,.10),transparent 68%),
+    radial-gradient(780px 700px at 50% 100%,rgba(47,211,154,.08),transparent 72%),
+    linear-gradient(150deg,var(--bg),#07150e 52%,#040b07);
+  overflow-x:hidden;
+}
+body:before,body:after{content:"";position:fixed;pointer-events:none;z-index:-1;border-radius:50%;filter:blur(70px);opacity:.55}
+body:before{width:44vw;height:44vw;min-width:280px;min-height:280px;left:-14vw;top:18vh;background:rgba(47,211,154,.15)}
+body:after{width:38vw;height:38vw;min-width:240px;min-height:240px;right:-10vw;bottom:4vh;background:rgba(255,159,120,.09)}
+a{color:var(--mint);text-decoration:none}
+a:hover{color:#a7ffe0}
+button{font:inherit}
+.shell{width:min(1120px,calc(100% - 40px));margin:0 auto}
+.skip{position:fixed;left:-999px;top:8px;background:var(--mint);color:#04130b;padding:8px 14px;border-radius:10px;z-index:99}
+.skip:focus{left:8px}
+.glass{
+  background:linear-gradient(145deg,rgba(31,67,47,.46),rgba(9,24,16,.56));
+  border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 24px 80px rgba(0,0,0,.34);
+  -webkit-backdrop-filter:blur(22px) saturate(145%);backdrop-filter:blur(22px) saturate(145%);
+}
+.nav{
+  position:sticky;top:14px;z-index:20;margin-top:16px;border-radius:22px;
+  display:flex;align-items:center;gap:18px;padding:10px 12px 10px 14px;
+}
+.brand{display:flex;align-items:center;gap:11px;min-width:0}
+.brand img{width:40px;height:40px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.28)}
+.brand b{font-size:15px;letter-spacing:.01em;white-space:nowrap}
+.brand span{display:block;font:9px/1.2 var(--mono);color:var(--muted);letter-spacing:.16em;margin-top:3px}
+.navlinks{display:flex;gap:4px;margin-left:auto;align-items:center;flex-wrap:wrap}
+.navlinks a{color:var(--muted);font-size:12px;padding:8px 11px;border-radius:11px}
+.navlinks a:hover{background:rgba(255,255,255,.06);color:var(--ink)}
+.navlinks .navcta{color:#04140c;background:var(--mint);font-weight:700;padding:9px 14px}
+.navlinks .navcta:hover{background:#a7ffe0;color:#04140c}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:center;padding:58px 0 28px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--mint);font:10px/1 var(--mono);letter-spacing:.14em;border:1px solid rgba(91,229,182,.25);background:rgba(91,229,182,.07);padding:8px 11px;border-radius:999px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(91,229,182,.12)}
+h1{font-size:clamp(38px,6vw,74px);line-height:.98;letter-spacing:-.045em;margin:20px 0 18px;font-weight:800}
+h1 em{font-style:normal;color:var(--mint)}
+.lead{max-width:610px;color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 26px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:0 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.055);color:var(--ink);font-size:13px;font-weight:650;cursor:pointer;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+.btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.09);border-color:rgba(177,255,218,.28);color:var(--ink)}
+.btn.primary{background:linear-gradient(135deg,#72f0c1,#2fd39a);border-color:transparent;color:#04140c;box-shadow:0 12px 32px rgba(47,211,154,.22)}
+.btn.primary:hover{background:linear-gradient(135deg,#a7ffe0,#5be5b6);color:#04140c}
+.btn.ghost{background:rgba(9,23,15,.46)}
+.hero-mark{display:flex;justify-content:center;align-items:center;position:relative}
+.hero-mark:before{content:"";position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle,rgba(91,229,182,.20),transparent 68%);filter:blur(22px)}
+.hero-mark img{position:relative;width:min(310px,70vw);height:auto;border-radius:72px;box-shadow:0 30px 90px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.12);transform:rotate(-2deg)}
+.versionline{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:16px;color:var(--dim);font:10px/1.5 var(--mono);letter-spacing:.05em}
+.versionline b{color:var(--muted);font-weight:500}
+.section{padding:20px 0 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:34px 0 14px}
+.section-head h2{font-size:clamp(22px,3vw,32px);letter-spacing:-.03em;margin:0}
+.section-head p{color:var(--muted);font-size:12px;margin:0;max-width:460px;text-align:right}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{border-radius:22px;padding:22px;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;inset:0;background:linear-gradient(140deg,rgba(255,255,255,.06),transparent 42%);pointer-events:none}
+.card h3{margin:0 0 5px;font-size:18px;letter-spacing:-.02em}
+.card p{margin:0;color:var(--muted);font-size:12px;line-height:1.7}
+.pill{display:inline-flex;align-items:center;gap:6px;font:9px/1 var(--mono);letter-spacing:.12em;padding:6px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin-bottom:14px}
+.pill.live{color:var(--mint);border-color:rgba(91,229,182,.28);background:rgba(91,229,182,.06)}
+.dl-row{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:16px}
+.file{font:11px/1.5 var(--mono);color:var(--muted);word-break:break-all}
+.hashbox{margin-top:14px;border:1px solid var(--line2);background:rgba(2,10,6,.35);border-radius:13px;padding:10px 11px;display:flex;align-items:center;gap:10px}
+.hashbox code{font:10px/1.5 var(--mono);color:#b8d8c6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.copy{border:1px solid var(--line);background:rgba(255,255,255,.055);color:var(--muted);border-radius:8px;padding:5px 8px;font:9px/1 var(--mono);cursor:pointer}
+.copy:hover{color:var(--ink);background:rgba(255,255,255,.1)}
+.verify-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+.verify-list{display:grid;gap:9px}
+.verify-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px dashed rgba(177,255,218,.12);font-size:12px;color:var(--muted)}
+.verify-row:last-child{border-bottom:0}
+.check{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:rgba(91,229,182,.10);color:var(--mint);font-size:11px;flex:0 0 auto}
+.verify-row b{color:var(--ink);font-weight:600}
+.verify-row span{margin-left:auto;text-align:right;font:10px/1.5 var(--mono);color:var(--dim)}
+.codecard{font:10px/1.8 var(--mono);color:#a9c9b8;background:rgba(2,10,6,.38);border:1px solid var(--line2);border-radius:16px;padding:16px;overflow:auto}
+.codecard .k{color:var(--dim)}
+.codecard .v{color:var(--mint)}
+.codecard .h{color:#ffcdb5}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.feature{border-radius:19px;padding:19px;min-height:150px}
+.feature .ico{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:rgba(91,229,182,.10);border:1px solid rgba(91,229,182,.18);color:var(--mint);font-size:16px;margin-bottom:14px}
+.feature h3{font-size:14px;margin:0 0 7px}
+.feature p{font-size:11px;line-height:1.7;margin:0;color:var(--muted)}
+.source-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.source{display:flex;align-items:center;gap:11px;padding:14px 15px;border-radius:15px;color:var(--ink);border:1px solid var(--line2);background:rgba(255,255,255,.03)}
+.source:hover{background:rgba(255,255,255,.06);border-color:rgba(177,255,218,.22)}
+.source .s-ico{width:30px;height:30px;border-radius:9px;background:rgba(91,229,182,.09);display:grid;place-items:center;color:var(--mint);font:11px var(--mono)}
+.source b{display:block;font-size:12px}
+.source small{display:block;color:var(--dim);font:9px/1.3 var(--mono);margin-top:2px}
+.footer{margin:48px 0 22px;padding:20px 0 0;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:18px;color:var(--dim);font:10px/1.7 var(--mono)}
+.footer a{color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:rgba(8,24,15,.95);border:1px solid rgba(91,229,182,.3);color:var(--ink);padding:10px 15px;border-radius:12px;font-size:12px;transition:.2s;z-index:50}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:820px){
+  .shell{width:min(1120px,calc(100% - 24px))}
+  .nav{top:8px;margin-top:8px;padding:9px 10px}
+  .navlinks a:not(.navcta){display:none}
+  .hero{grid-template-columns:1fr;padding:38px 0 18px;gap:10px}
+  .hero-mark{order:-1;justify-content:flex-start}
+  .hero-mark img{width:118px;border-radius:30px}
+  .hero-mark:before{display:none}
+  h1{font-size:clamp(40px,12vw,62px)}
+  .lead{font-size:14px}
+  .cards,.verify-grid,.feature-grid,.source-grid{grid-template-columns:1fr}
+  .section-head{display:block;margin-top:26px}
+  .section-head p{text-align:left;margin-top:6px}
+  .footer{display:block}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
 <body>
-<main class="card">
-<h1>DeWEB-Desktop 0.1.0</h1>
-<p>Android 正式版下载</p>
-<a class="big" href="./downloads/DeWEB-Desktop-0.1.0.apk" download>下载 DeWEB-Desktop-0.1.0.apk</a>
-<div class="meta">
-<div>版本：0.1.0（versionCode 407）</div>
-<div>大小：1,536,997 bytes</div>
-<div class="hash">SHA-256：12EDB7216CD2CB7C39DC92CCB4E70B5088918152482F49E09400A32D4659D545</div>
-<div class="hash">证书 SHA-256：DFBFDC03A95F478C7EBDEE3573CEACEA174ACAE13FCAAE9BCEBEC67546D03AC0</div>
+<a class="skip" href="#download">跳到下载</a>
+<div class="shell">
+  <nav class="nav glass" aria-label="页面导航">
+    <a class="brand" href="#top" aria-label="DeWEB-Desktop 首页">
+      <img src="./docs/logo.webp" alt="DeWEB-Desktop logo" width="40" height="40">
+      <span><b>DeWEB-Desktop</b><span>ON-CHAIN DESKTOP</span></span>
+    </a>
+    <div class="navlinks">
+      <a href="#download">下载</a>
+      <a href="#verify">可验证</a>
+      <a href="#features">多窗口</a>
+      <a href="#source">开源</a>
+      <a class="navcta" href="#download">DOWNLOAD</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> PUBLIC RELEASE · 2026</span>
+        <h1>你的链上桌面，<br><em>可验证地</em>运行。</h1>
+        <p class="lead">DeWEB-Desktop 把链上 Web、钱包与多窗口桌面放进一个原生壳。APK 可核对 SHA 与证书；链上 Web 由 Tape 校验器多 RPC 交叉验证；更新只打开官方下载页。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="./downloads/DeWEB-Desktop-0.1.0.apk" download>下载正式版 <span aria-hidden="true">↓</span></a>
+          <a class="btn ghost" href="https://github.com/yy54816464/deweb-desktop-android" target="_blank" rel="noopener">GitHub 源码</a>
+        </div>
+        <div class="versionline">
+          <span>VERSION <b>0.1.0</b></span>
+          <span>BUILD <b>407</b></span>
+          <span>ANDROID <b>7.0+</b></span>
+          <span>LICENSE <b>MIT</b></span>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <img src="./docs/logo.webp" alt="" width="512" height="512">
+      </div>
+    </section>
+
+    <section class="section" id="download">
+      <div class="section-head">
+        <h2>下载</h2>
+        <p>官方域名下载。安装前核对 SHA-256 与证书指纹；不要从镜像或聊天附件安装。</p>
+      </div>
+      <div class="cards">
+        <article class="card glass">
+          <span class="pill live">● STABLE · 0.1.0</span>
+          <h3>DeWEB-Desktop</h3>
+          <p>正式版 · versionCode 407 · 面向日常使用。</p>
+          <div class="dl-row">
+            <div class="file">DeWEB-Desktop-0.1.0.apk<br>1,536,997 bytes</div>
+            <a class="btn primary" href="./downloads/DeWEB-Desktop-0.1.0.apk" download>下载</a>
+          </div>
+          <div class="hashbox">
+            <code>SHA-256 12EDB7216CD2CB7C39DC92CCB4E70B5088918152482F49E09400A32D4659D545</code>
+            <button class="copy" data-copy="12EDB7216CD2CB7C39DC92CCB4E70B5088918152482F49E09400A32D4659D545" type="button">复制</button>
+          </div>
+        </article>
+        <article class="card glass">
+          <span class="pill">◇ BETA · 0.1.0-beta</span>
+          <h3>DeWEB-Desktop Beta</h3>
+          <p>测试版 · versionCode 407 · 新功能优先验证。</p>
+          <div class="dl-row">
+            <div class="file">DeWEB-Beta-0.1.0.apk<br>1,537,849 bytes</div>
+            <a class="btn ghost" href="./downloads/DeWEB-Beta-0.1.0.apk" download>下载 Beta</a>
+          </div>
+          <div class="hashbox">
+            <code>SHA-256 780AFB5CF04533E0D883C113805FBDF6FE263CA11FB877F767339F52D74A47B6</code>
+            <button class="copy" data-copy="780AFB5CF04533E0D883C113805FBDF6FE263CA11FB877F767339F52D74A47B6" type="button">复制</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="verify">
+      <div class="section-head">
+        <h2>先验证，再安装。</h2>
+        <p>域名不是安全边界；包名、versionCode、签名证书和 SHA-256 才是。</p>
+      </div>
+      <div class="verify-grid">
+        <div class="card glass">
+          <span class="pill live">● APK VERIFICATION</span>
+          <div class="verify-list">
+            <div class="verify-row"><span class="check">✓</span><b>包名</b><span>com.deweb.shell</span></div>
+            <div class="verify-row"><span class="check">✓</span><b>versionCode</b><span>407 / 0.1.0</span></div>
+            <div class="verify-row"><span class="check">✓</span><b>签名方案</b><span>v1 + v2 + v3</span></div>
+            <div class="verify-row"><span class="check">✓</span><b>证书 SHA-256</b><span>DFBFDC03…D03AC0</span></div>
+            <div class="verify-row"><span class="check">✓</span><b>安装权限</b><span>无 REQUEST_INSTALL_PACKAGES</span></div>
+          </div>
+        </div>
+        <div class="card glass">
+          <span class="pill">ON-CHAIN WEB</span>
+          <h3 style="margin-bottom:10px">Tape 校验</h3>
+          <p style="margin-bottom:14px">Web 页面由多个 RPC 交叉校验 size / hash / chunks；不通过校验的字节不会进入 WebView。</p>
+          <div class="codecard">
+            <div><span class="k">web hash</span> <span class="v">9123409A…4294859CE</span></div>
+            <div><span class="k">bytes</span> <span class="v">466,991 B</span></div>
+            <div><span class="k">chunks</span> <span class="v">20</span></div>
+            <div><span class="k">update</span> <span class="h">ECDSA P-256 · signed</span></div>
+            <div><span class="k">install</span> <span class="h">browser only · no in-app install</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="section-head">
+        <h2>多窗口，不是多标签。</h2>
+        <p>每个站点是独立 WebView；钱包、站点和后台页各自隔离。</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature glass"><div class="ico">▦</div><h3>多站点窗口</h3><p>同时打开多个 DeWEB 站点，独立导航、独立钱包上下文。</p></article>
+        <article class="feature glass"><div class="ico">◫</div><h3>悬浮与分屏</h3><p>站点可缩小为悬浮窗或分屏；桌面布局与位置本地记忆。</p></article>
+        <article class="feature glass"><div class="ico">◎</div><h3>钱包窗口隔离</h3><p>钱包页与站点页分离；签名请求走原生确认，主界面不暴露签名能力。</p></article>
+        <article class="feature glass"><div class="ico">⌁</div><h3>链上 Web 校验</h3><p>TapeVerifier 对页面字节做多 RPC 共识校验，缓存路径固定。</p></article>
+        <article class="feature glass"><div class="ico">⌘</div><h3>更新可验证</h3><p>清单 ECDSA 签名；只打开官方下载页，不在 App 内下载或安装。</p></article>
+        <article class="feature glass"><div class="ico">◈</div><h3>液态玻璃界面</h3><p>透明层、模糊、折射边界；桌面壁纸与主题在窗口之间延续。</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="source">
+      <div class="section-head">
+        <h2>开源地址</h2>
+        <p>源码公开；APK 从官方下载页获取。GitHub Pages 是下载镜像，不是另一套版本。</p>
+      </div>
+      <div class="source-grid">
+        <a class="source" href="https://github.com/yy54816464/deweb-desktop-android" target="_blank" rel="noopener"><span class="s-ico">A</span><span><b>Android 壳</b><small>github.com/yy54816464/deweb-desktop-android</small></span></a>
+        <a class="source" href="https://github.com/yy54816464/deweb-desktop-web" target="_blank" rel="noopener"><span class="s-ico">W</span><span><b>Web / 链上页面</b><small>github.com/yy54816464/deweb-desktop-web</small></span></a>
+        <a class="source" href="https://github.com/yy54816464/deweb-desktop-worker" target="_blank" rel="noopener"><span class="s-ico">C</span><span><b>Cloud Worker</b><small>github.com/yy54816464/deweb-desktop-worker</small></span></a>
+        <a class="source" href="https://github.com/yy54816464/deweb-taperelay" target="_blank" rel="noopener"><span class="s-ico">T</span><span><b>TapeRelay 客户端</b><small>github.com/yy54816464/deweb-taperelay</small></span></a>
+      </div>
+      <div class="versionline" style="margin-top:14px">
+        <span>GitHub 下载页 <a href="https://yy54816464.github.io/deweb-desktop-releases/" target="_blank" rel="noopener">yy54816464.github.io/deweb-desktop-releases</a></span>
+        <span>证书 <b>DFBFDC03…D03AC0</b></span>
+        <span>LICENSE <b>MIT</b></span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>DeWEB-Desktop · on-chain desktop for DeWEB sites<br>Download host: download.dewebdesk.link</span>
+      <span><a href="#verify">验证说明</a> · <a href="#source">开源</a> · <a href="https://github.com/yy54816464/deweb-desktop-releases" target="_blank" rel="noopener">Download repo</a></span>
+    </footer>
+  </main>
 </div>
-<p class="small">安装前请核对 SHA-256 与证书指纹。App 的更新弹窗只打开本下载页，不在 App 内下载或安装。</p>
-<div class="meta">
-<div>GitHub 下载页：<a href="https://yy54816464.github.io/deweb-desktop-releases/">yy54816464.github.io/deweb-desktop-releases</a></div>
-<div>GitHub 同版本 APK：<a href="https://yy54816464.github.io/deweb-desktop-releases/downloads/DeWEB-Desktop-0.1.0.apk">DeWEB-Desktop-0.1.0.apk</a></div>
-<div>GitHub 开源地址：<a href="https://github.com/yy54816464">github.com/yy54816464</a>（源码仓库即将公开）</div>
-</div>
-<p class="small">下载地址：download.dewebdesk.link</p>
-</main>
+<div class="toast" id="toast" role="status" aria-live="polite">已复制</div>
+<script>
+(function(){
+  var t=document.getElementById('toast');
+  function toast(msg){ if(!t)return; t.textContent=msg; t.classList.add('on'); clearTimeout(t._h); t._h=setTimeout(function(){t.classList.remove('on')},1400); }
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.getAttribute('data-copy')||'';
+      if(!v)return;
+      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(v).then(function(){toast('SHA-256 已复制')},function(){toast('复制失败，请手动选择')}); }
+      else { toast('复制失败，请手动选择'); }
+    });
+  });
+})();
+</script>
 </body>
 </html>
