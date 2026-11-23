@@ -1,8 +1,8 @@
 {
-  "versionCode": 404,
-  "versionName": "0.9.31",
-  "apk": "https://download.dewebdesk.link/downloads/DeWEB-Prod-0.9.31.apk",
-  "sha256": "4f0e49f8e58a035b952e044bbe349bf2f91313ac51d5eb00cb5d7fe2bcc26c09",
-  "signature": "MEQCIDmlRbDl/9IaoBxNxab1pAnVNt7r/5JK9uVRDr/xkVvTAiAy61wAk5Bt0CuOPy7dGgtgPCNi+F2w4IUqy+uVxd+wpg==",
-  "notes": "DeWEB 0.9.31 正式版。下载后请核对 SHA-256 与证书指纹。"
+  "versionCode": 406,
+  "versionName": "0.1.0",
+  "apk": "https://download.dewebdesk.link/downloads/DeWEB-Prod-0.1.0.apk",
+  "sha256": "79775100aa486dcb47c84eedc5e028241d6b1474e3abbf3cc8c4b7b892c41423",
+  "signature": "MEUCICUOKsOdhBJFBzMUubfQxkx/7Dnt4KfE4com2G5pyzBaAiEAl8FKrAHveriSZG2bR3mupQNDVbPur68cj9TZQzSPq7k=",
+  "notes": "DeWEB 0.1.0 正式版：浏览器下载页；App 不下载、不安装。GitHub 镜像同版本可核对 SHA-256。"
 }
