@@ -1,8 +1,8 @@
 {
-  "versionCode": 406,
+  "versionCode": 407,
   "versionName": "0.1.0",
   "apk": "https://download.dewebdesk.link/downloads/DeWEB-Desktop-0.1.0.apk",
-  "sha256": "c52b0c0534cfd498547d6ac63f4e05c297513593a02e3849c9ed73bac9c2a2ab",
-  "signature": "MEQCIFUf2bNh62jxJAqHltfOhXcZJiVv7b0Rk7sCNl0E2FhbAiButJMbP6MG8HLnfEpKksgdKQ2adsQeyHxatHvNeUqqOw==",
-  "notes": "DeWEB-Desktop 0.1.0 正式版；App 只打开下载页，不下载、不安装。"
+  "sha256": "12edb7216cd2cb7c39dc92ccb4e70b5088918152482f49e09400a32d4659d545",
+  "signature": "MEUCIFaW6mRJTv0XJErEYXm5foycJ0DgYoz7hssDsfG6LAymAiEAvtRkk22QIID7edjDVKM57BWOxP+7VggIuKfv3TsXTwA=",
+  "notes": "DeWEB-Desktop 0.1.0 正式版：修复电路会员在 RPC 超时后不生效；App 只打开下载页。"
 }
