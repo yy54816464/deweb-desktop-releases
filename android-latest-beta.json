@@ -2,7 +2,7 @@
   "versionCode": 406,
   "versionName": "0.1.0-beta",
   "apk": "https://download.dewebdesk.link/downloads/DeWEB-Beta-0.1.0.apk",
-  "sha256": "0236a260ad322f606672f1455e26dbd3a5068400b0390d5ed6eafac80b81a127",
-  "signature": "MEQCIGPZ/pXlUDLtHtltKlmFjqFWaZneflvXPy3DfTQzz109AiA0wpKAcGmALzj/YQJWRhhER+Prz/P5HSmmHWAfRkjTqw==",
-  "notes": "DeWEB Beta 0.1.0：v1+v2+v3；站点设置内有后台导航测试；App 不下载、不安装。"
+  "sha256": "04cfc07e5960deba7dc4f9bda6b478d2298f1e6816fda17a7dd05a84298e4537",
+  "signature": "MEQCIDKmc0zMO/vV9073nKZ09ZUQug8+SBSqAjMI+ixcHyzCAiAz1WK6/hjFwHQhdfnEBuAwUp+wnPJMPBnLyGFn2aCA+w==",
+  "notes": "DeWEB Beta 0.1.0：主站设置入口、后台导航测试修正、夜间模式保留；App 不下载、不安装。"
 }
