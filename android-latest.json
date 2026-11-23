@@ -1,8 +1,8 @@
 {
   "versionCode": 406,
   "versionName": "0.1.0",
-  "apk": "https://download.dewebdesk.link/downloads/DeWEB-Prod-0.1.0.apk",
-  "sha256": "79775100aa486dcb47c84eedc5e028241d6b1474e3abbf3cc8c4b7b892c41423",
-  "signature": "MEUCICUOKsOdhBJFBzMUubfQxkx/7Dnt4KfE4com2G5pyzBaAiEAl8FKrAHveriSZG2bR3mupQNDVbPur68cj9TZQzSPq7k=",
-  "notes": "DeWEB 0.1.0 正式版：浏览器下载页；App 不下载、不安装。GitHub 镜像同版本可核对 SHA-256。"
+  "apk": "https://download.dewebdesk.link/downloads/DeWEB-Desktop-0.1.0.apk",
+  "sha256": "c52b0c0534cfd498547d6ac63f4e05c297513593a02e3849c9ed73bac9c2a2ab",
+  "signature": "MEQCIFUf2bNh62jxJAqHltfOhXcZJiVv7b0Rk7sCNl0E2FhbAiButJMbP6MG8HLnfEpKksgdKQ2adsQeyHxatHvNeUqqOw==",
+  "notes": "DeWEB-Desktop 0.1.0 正式版；App 只打开下载页，不下载、不安装。"
 }
