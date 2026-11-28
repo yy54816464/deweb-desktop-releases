@@ -1,0 +1,7 @@
+{
+  "version": "0.1.0",
+  "downloadUrl": "https://download.dewebdesk.link/DeWEB-PC-0.1.0-win-x64.zip",
+  "sha256": "061afc49b84676c4329be5d74d0ff55a94fc0ee06835231f872465627671d0ec",
+  "notes": "0.1.0: 与手机端对齐默认跟随链上主文档 hash；严格固定/policy 可选；发布包 README 已脱敏。",
+  "signature": "MEUCIQDIi1llZe76m7+rLpGFslufry81aN43ehue2aLtisfLrwIgFmmZigdeVTnUbewixvFTbiQ57LXvLz2PCyunBhAcXlc="
+}
