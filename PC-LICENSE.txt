@@ -1,0 +1,16 @@
+Copyright (c) 2026 DeWEB. All rights reserved.
+
+This binary distribution is proprietary software provided for use under the
+official DeWEB terms. No permission is granted to redistribute, sublicense,
+reverse engineer, or publish modified copies except as required by applicable
+law or expressly permitted in writing by the copyright holder.
+
+The software is provided "AS IS", without warranties of any kind, express or
+implied, including merchantability, fitness for a particular purpose, and
+non-infringement. To the maximum extent permitted by law, the copyright holder
+is not liable for indirect, incidental, special, consequential, or punitive
+damages, or for loss of data, assets, or profits.
+
+Third-party components are listed in THIRD_PARTY_NOTICES.md and remain under
+their respective licenses. Nothing in this file limits rights granted by those
+third-party licenses.
