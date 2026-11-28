@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
   "downloadUrl": "https://download.dewebdesk.link/DeWEB-PC-0.1.0-win-x64.zip",
-  "sha256": "d55fb7f363651c9b1c44e254ebad8db81b6ae9b7504d969df66511178339849d",
-  "notes": "0.1.0: 默认跟随链上主文档 hash；严格 policy 可选；完整第三方许可证文本。",
-  "signature": "MEYCIQDqQb95Pp4p1tqppsykzNUDICuRQhTrMgOReGS7q9uZCwIhAJZnblvF3h1Nzq3uy4diI7txGX60Y982EET2nCJGRfpa"
+  "sha256": "82f4dde1064b32c7322192de0c163e82686fc6d1774d1f30af94bb217efcc96b",
+  "notes": "0.1.0: MIT 开源版本；默认跟随链上主文档 hash；严格 policy 可选；完整第三方许可证文本。",
+  "signature": "MEQCIHX4GpIB9aykAy9g73qrDKzdpSv6Hj0svk+B9IAqvoI7AiANv/YjCTXT3V2C+i05Bs8kjA6roUCOlnfUf9xacJjfyg=="
 }
