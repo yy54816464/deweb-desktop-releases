@@ -58,6 +58,7 @@ Windows 桌面版 DeWEB：WPF + WebView2，链上 Web 容器直读，钱包操�
 ## 许可证
 
 - 应用二进制许可证：`LICENSE`
-- 第三方组件声明：`THIRD_PARTY_NOTICES.md`
+- 第三方组件清单：`THIRD_PARTY_NOTICES.md`
+- 完整许可证文本：`licenses/`
 
 第三方组件仍适用其各自许可证。
